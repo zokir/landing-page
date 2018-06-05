@@ -1,0 +1,26 @@
+
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Archivo:400,500,700|Roboto:300,400,500,700,900');
+
+//components
+@import "components/variables";
+@import "components/mixins";
+@import "components/normalizer";
+
+@import "components/elements";
+@import "components/buttons";
+@import "components/navigation";
+@import "components/typography";
+@import "components/owl-carousel-custom";
+@import 'components/izimodal-min';
+@import 'components/modals-custom';
+
+@import 'components/header';
+@import 'components/footer';
+@import 'components/layout';
+
+@import 'components/form';
+@import 'components/social';
+@import 'components/animations';
+
+@import 'components/landing';

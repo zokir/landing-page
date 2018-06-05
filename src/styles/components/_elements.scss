@@ -1,0 +1,53 @@
+.img-responsive {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.bg {
+	position: relative;
+
+	&:before {
+		content: '';
+		background: url(../images/rectangle.png);
+		background-size: cover;
+		height: 925px;
+		width: 480px;
+		position: absolute;
+		left: -93px;
+		top: 133px;
+	}
+
+	&.bg-right {
+		&:before {
+			background: url(../images/rectangle-right.png);
+			background-size: cover;
+			left: auto;
+			top: 0;
+			right: -200px;
+		}
+	}
+}
+
+.linkedin-link {
+	font-size: 18px;
+
+	img {
+		margin: -8px 8px 0 0;
+	}
+}
+
+.hidden-sm {
+	@media #{$sm-max} {
+		display: none !important;
+	}
+}
+
+.visible-sm {
+	display: none !important;
+
+	@media #{$sm-max} {
+		display: block !important;
+	}
+}
+	

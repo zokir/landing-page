@@ -1,0 +1,164 @@
+// Includes font $font-face.
+@mixin font-face ($name, $file-name, $font-weight: 400, $font-style: normal) {
+  @font-face {
+    font-family: $name;
+    src: url('#{$path-fonts}#{$file-name}.eot');
+    src: url('#{$path-fonts}#{$file-name}.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts}#{$file-name}.woff') format('woff'),
+         url('#{$path-fonts}#{$file-name}.ttf') format('truetype'),
+         url('#{$path-fonts}#{$file-name}.svg##{$name}') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+
+  %#{$file-name} {
+    font-family: $name;
+  }
+}
+
+/* Position */
+
+@mixin pos-l-t ($l: 0, $t: 0) {
+    left: $l;
+    top: $t;
+}
+
+@mixin pos-l-b ($l: 0, $b: 0) {
+    left: $l;
+    bottom: $b;
+}
+
+@mixin pos-r-t ($r: 0, $t: 0) {
+    right: $r;
+    top: $t;
+}
+
+@mixin pos-r-b ($r: 0, $b: 0) {
+    right: $r;
+    bottom: $b;
+}
+
+@mixin pos-a-l-t ($l: 0, $t: 0) {
+    position: absolute;
+    @include pos-l-t($l, $t);
+}
+
+@mixin pos-a-l-b ($l: 0, $b: 0) {
+    position: absolute;
+    @include pos-l-b($l, $b);
+}
+
+@mixin pos-a-r-t ($r: 0, $t: 0) {
+    position: absolute;
+    @include pos-r-t($r, $t);
+}
+
+@mixin pos-a-r-b ($r: 0, $b: 0) {
+    position: absolute;
+    @include pos-r-b($r, $b);
+}
+
+@mixin pos-r-l-t ($l: 0, $t: 0) {
+    position: relative;
+    @include pos-l-t($l, $t);
+}
+
+@mixin pos-r-l-b ($l: 0, $b: 0) {
+    position: relative;
+    @include pos-l-b($l, $b);
+}
+
+@mixin pos-r-r-t ($r: 0, $t: 0) {
+    position: relative;
+    @include pos-r-t($r, $t);
+}
+
+@mixin pos-r-r-b ($r: 0, $b: 0) {
+    position: relative;
+    @include pos-r-b($r, $b);
+}
+
+@mixin custom-row ($offset) {
+
+    margin-left: -$offset/2;
+    margin-right: -$offset/2;
+
+    & > * {
+        padding-left: $offset/2;
+        padding-right: $offset/2;
+    }
+}
+
+@mixin arrow($width: 20px, $height: $width, $direction: up, $color: $white){
+  @extend %arr;
+  
+  // Right
+  @if $direction == right {
+        border-top: $height solid transparent !important;
+        border-bottom: $height solid transparent !important;
+        border-left: $width solid $color;
+    }
+
+  // Left
+  @if $direction == left {
+        border-top: $height solid transparent !important;
+        border-bottom: $height solid transparent !important;
+        border-right: $width solid $color;
+    }
+
+  // Up
+  @if $direction == up {
+        border-left: $width solid transparent !important;
+        border-right: $width solid transparent !important;
+        border-bottom: $height solid $color;
+    }
+
+  // Down
+  @if $direction == down {
+        border-left: $width solid transparent !important;
+        border-right: $width solid transparent !important;
+        border-top: $height solid $color;
+    }
+}
+
+/* Clear offset */
+%clear-offset {
+	margin: 0;
+	padding: 0;
+}
+
+/* Clear list */
+%clear-list {
+	list-style: none;
+	@extend %clear-offset;
+}
+
+/* Generate rows */
+@mixin custom-row($offset) {
+
+	margin-left: -$offset/2;
+	margin-right: -$offset/2;
+
+	& > * {
+		padding-left: $offset/2;
+		padding-right: $offset/2;
+	}
+
+}
+
+@mixin clear-row() {
+
+	& > * {
+		width: 100%;
+	}
+}
+
+%font-awesome {
+	display: inline-block;
+	font-family: FontAwesome;
+	font-size: inherit;
+	line-height: 1;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
