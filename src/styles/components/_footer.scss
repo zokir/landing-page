@@ -1,5 +1,6 @@
 .footer {
-	padding-top: 20px;
+	padding: 20px 0;
+
 	@media #{$sm-max} {
 		text-align: center;
 	}
@@ -28,6 +29,10 @@
 
 		@media #{$md-max} {
 			width: 50%;
+		}
+
+		@media #{$xs-max} {
+			width: 100%;
 		}
 	}
 

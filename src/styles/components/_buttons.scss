@@ -11,6 +11,10 @@
 	border-radius: $default-border-radius;
 	min-width: 146px;
 	transition: all .75s;
+
+	@media #{$xm-max} {
+		min-width: 120px;
+	}
 	
 	&:hover {
 		text-decoration: none;

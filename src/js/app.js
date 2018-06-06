@@ -6,13 +6,16 @@
 $(function(){
     var win = $(window);
     var mainContainer = $('body');
+    var headerPanel = $('.header');
+    var openMenuClass = 'open-menu';
+    var btn = headerPanel.find('.mobile-menu-btn');
 
 	init();
 
     function init() {
         initCarousel();
-
-        $("#modal, #privacy, #ownership, #monetization, #team-1, #team-2").iziModal();
+        btnClickListener();
+        initModals();
     }
 
     function initCarousel() {
@@ -24,11 +27,12 @@ $(function(){
             responsive: {
                 0: {
                     items: 1,
-                    loop: true,
-                    dots: true
+                    dots: true,
+                    margin: 35
                 },
-                767: {
+                576: {
                     items: 3,
+                    dots: true,
                     loop: false
                 },
                 980: {
@@ -73,5 +77,17 @@ $(function(){
 
         mainContainer.removeClass('open-menu');
     });
+
+    function btnClickListener() {
+        if (btn.length) {
+            btn.on('click', function () {
+                mainContainer.toggleClass(openMenuClass);
+            });
+        }
+    }
+
+    function initModals() {
+        $("#modal, #privacy, #ownership, #monetization, #team-1, #team-2, #team-3, #team-4, #team-5, #team-6").iziModal();
+    }
 
 });

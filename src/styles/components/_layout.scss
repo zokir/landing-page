@@ -13,6 +13,10 @@ body {
 	color: $default-text-color;
 	background-color: $body-bg;
 	min-width: 320px;
+
+	&.open-menu {
+		overflow: hidden !important;
+	}
 }
 
 .layout {
@@ -27,6 +31,10 @@ body {
 	width: 100%;
 	position: relative;
 	padding: 0 30px;
+
+	@media #{$xs-max} {
+		padding: 0 15px;
+	}
 }
 
 .section {
