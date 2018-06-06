@@ -15,7 +15,7 @@
 	}
 
 	@media #{$xs-max} {
-		padding-top: 400px;
+		height: auto;
 	}
 
 	.text-holder {
@@ -59,6 +59,14 @@
 					margin-right: 12px;
 				}
 
+				@media #{$xs-max} {
+					margin-right: 0;
+				}
+			}
+
+			@media #{$xs-max} {
+				margin: 0 0 10px;
+				width: 100%;
 			}
 		}
 	}
@@ -91,6 +99,10 @@
 		-webkit-animation: pulse 1.5s infinite;
 		z-index: 10;
 
+		img {
+			max-width: 100%;
+		}
+
 		&:hover {
 			animation: none;
 			-webkit-animation: none;
@@ -100,6 +112,12 @@
 			left: auto;
 			right: 15%;
 			animation: none;
+		}
+
+		@media #{$xs-max} {
+			right: 30%;
+			width: 65px;
+			height: 65px;
 		}
 	}
 }
@@ -262,13 +280,16 @@
 	@media #{$xs-max} {
 		width: 100%;
 	}
+
+	.social {
+		padding-bottom: 30px;
+	}
 }
 
 .block-team {
 	display: flex;
     flex-direction: column;
     justify-content: space-between;
-	padding: 30px;
 	height: 442px;
 	background: $white;
 	text-align: center;
@@ -278,6 +299,10 @@
 
 	&:hover {
 		border-color: $sea-blue; 
+	}
+
+	.info-holder {
+		padding: 30px 30px 0;
 	}
 
 	.img-holder {

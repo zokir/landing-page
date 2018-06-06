@@ -11,13 +11,14 @@
 		float: left;
 
 		img {
-			width: 100%;
+			max-width: 100%;
 			cursor: pointer;
 		}
 	}
 
 	.owl-dots {
 		text-align: center;
+		padding-top: 20px;
 	}
 
 	.owl-dot {
@@ -69,4 +70,9 @@
 	height: 161px;
     display: flex;
     align-items: center;
+    justify-content: center;
+
+    a {
+    	display: block;
+    }
 }

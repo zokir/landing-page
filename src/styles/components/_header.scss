@@ -3,8 +3,12 @@
 	left: 0;
 	top: 0;
 	width: 100%;
-	z-index: 10;
+	z-index: 100;
 	padding: 34px 0;
+
+	@media #{$xm-max} {
+		padding: 15px 0;
+	}
 
 	.container {
 		display: flex;
@@ -19,6 +23,10 @@
 
 		.btn {
 			margin-left: 60px;
+
+			@media #{$xm-max} {
+				margin-left: 20px;
+			}
 		}
 	}
 }
@@ -26,4 +34,12 @@
 .logo {
 	display: inline-block;
 	vertical-align: top;
+
+	img {
+		max-width: 100%;
+	}
+
+	@media #{$xm-max} {
+		max-width: 140px;
+	}
 }
