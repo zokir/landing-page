@@ -27,10 +27,12 @@ $(function(){
             responsive: {
                 0: {
                     items: 1,
-                    dots: true
+                    dots: true,
+                    margin: 35
                 },
-                767: {
+                576: {
                     items: 3,
+                    dots: true,
                     loop: false
                 },
                 980: {

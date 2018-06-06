@@ -13,6 +13,9 @@
 
 	@media #{$md-max} {
 		max-width: 300px;
+	}
+
+	@media #{$sm-max} {
 		margin: 0 auto;
 	}
 
